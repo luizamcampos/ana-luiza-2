@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -12,12 +11,7 @@
 
   <title>Sobre mim — Ana Luiza Campos</title>
 
-
   <style>
-
-    /* =====================================================
-       RESET
-    ===================================================== */
 
     * {
       margin: 0;
@@ -31,11 +25,8 @@
 
     body {
       font-family: Helvetica, Arial, sans-serif;
-
       color: #fff;
-
       background: #000;
-
       overflow-x: hidden;
     }
 
@@ -49,50 +40,40 @@
     }
 
 
-    /* =====================================================
+    /* =========================================
        FUNDO FIXO
-    ===================================================== */
+    ========================================= */
 
     .fixed-background {
       position: fixed;
-
       inset: 0;
-
       z-index: -10;
 
       background-image: url("fundo.jpg");
-
       background-size: cover;
-
       background-position: center;
-
       background-repeat: no-repeat;
     }
 
 
-    /* =====================================================
-       TRANSPARÊNCIA CONTÍNUA
-    ===================================================== */
+    /* =========================================
+       TRANSPARÊNCIA
+    ========================================= */
 
     .glass-page {
       width: 100%;
-
       min-height: 100vh;
 
-      background:
-        rgba(230, 215, 195, .30);
+      background: rgba(230, 215, 195, .30);
 
-      -webkit-backdrop-filter:
-        blur(16px);
-
-      backdrop-filter:
-        blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
     }
 
 
-    /* =====================================================
+    /* =========================================
        TOPO
-    ===================================================== */
+    ========================================= */
 
     .top-bar {
       width: 100%;
@@ -102,63 +83,44 @@
         clamp(34px, 5vw, 80px);
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
     }
 
-
-    /* VOLTAR */
-
     .back-link {
       font-size: 12px;
-
       font-weight: 400;
-
       text-transform: lowercase;
 
-      transition:
-        opacity .25s ease;
+      transition: opacity .25s ease;
     }
 
     .back-link:hover {
       opacity: .55;
     }
 
-
-    /* =====================================================
-       IDENTIDADE DO TOPO
-    ===================================================== */
-
     .top-identity {
       display: flex;
-
       align-items: center;
-
       gap: 10px;
     }
 
     .top-tile {
       width: 28px;
-
       height: auto;
-
       object-fit: contain;
     }
 
     .top-name {
       font-size: 12px;
-
       font-weight: 400;
-
       text-transform: none;
     }
 
 
-    /* =====================================================
+    /* =========================================
        CONTEÚDO
-    ===================================================== */
+    ========================================= */
 
     .about-content {
       width: 100%;
@@ -170,15 +132,13 @@
     }
 
 
-    /* =====================================================
+    /* =========================================
        REVEAL
-    ===================================================== */
+    ========================================= */
 
     .reveal {
       opacity: 0;
-
-      transform:
-        translateY(32px);
+      transform: translateY(32px);
 
       transition:
         opacity .8s ease,
@@ -187,42 +147,33 @@
 
     .reveal.visible {
       opacity: 1;
-
-      transform:
-        translateY(0);
+      transform: translateY(0);
     }
 
 
-    /* =====================================================
+    /* =========================================
        TÍTULOS
-    ===================================================== */
+    ========================================= */
 
     .section-title {
-      font-size:
-        clamp(20px, 2vw, 29px);
+      font-size: clamp(20px, 2vw, 29px);
 
       font-weight: 400;
 
-      letter-spacing:
-        -.03em;
+      letter-spacing: -.03em;
 
-      text-transform:
-        lowercase;
+      text-transform: lowercase;
 
       margin-bottom: 24px;
     }
 
 
-    /* =====================================================
+    /* =========================================
        SOBRE MIM
-    ===================================================== */
+    ========================================= */
 
     .profile {
       display: grid;
-
-      /*
-        Foto menor no desktop.
-      */
 
       grid-template-columns:
         185px
@@ -231,70 +182,42 @@
       gap:
         clamp(55px, 7vw, 115px);
 
-      /*
-        Faz o texto terminar exatamente
-        alinhado com a base da foto.
-      */
-
       align-items: end;
 
       padding-bottom: 95px;
     }
 
-
-    /* =====================================================
-       FOTO
-    ===================================================== */
-
     .profile-photo {
       width: 185px;
 
-      aspect-ratio:
-        3 / 4;
+      aspect-ratio: 3 / 4;
 
       overflow: hidden;
 
-      background:
-        rgba(255,255,255,.08);
+      background: rgba(255,255,255,.08);
     }
 
     .profile-photo img {
       width: 100%;
-
       height: 100%;
 
-      display: block;
-
       object-fit: cover;
-
       object-position: center;
     }
 
-
-    /* =====================================================
-       TEXTO SOBRE MIM
-    ===================================================== */
-
     .profile-text {
       width: 100%;
-
       max-width: 820px;
     }
 
     .profile-text p {
-      font-size:
-        clamp(16px, 1.55vw, 23px);
+      font-size: clamp(16px, 1.55vw, 23px);
 
       line-height: 1.38;
 
-      letter-spacing:
-        -.015em;
+      letter-spacing: -.015em;
 
       font-weight: 400;
-
-      /*
-        TEXTO JUSTIFICADO
-      */
 
       text-align: justify;
 
@@ -302,9 +225,9 @@
     }
 
 
-    /* =====================================================
+    /* =========================================
        SEÇÕES
-    ===================================================== */
+    ========================================= */
 
     .section {
       padding:
@@ -316,21 +239,14 @@
         rgba(255,255,255,.28);
     }
 
-
-    /* =====================================================
-       SUBTÍTULOS
-    ===================================================== */
-
     .area-title {
       margin-bottom: 32px;
 
       font-size: 12px;
 
-      letter-spacing:
-        .14em;
+      letter-spacing: .14em;
 
-      text-transform:
-        lowercase;
+      text-transform: lowercase;
 
       opacity: .72;
     }
@@ -340,15 +256,13 @@
     }
 
 
-    /* =====================================================
+    /* =========================================
        EXPERIÊNCIA
-    ===================================================== */
+    ========================================= */
 
     .experience-list {
       display: flex;
-
       flex-direction: column;
-
       gap: 48px;
     }
 
@@ -363,53 +277,37 @@
         clamp(30px, 5vw, 70px);
     }
 
-
-    /* DATA */
-
     .experience-date {
       font-size: 12px;
 
       line-height: 1.5;
 
-      letter-spacing:
-        .04em;
+      letter-spacing: .04em;
 
       opacity: .70;
     }
 
-
-    /* EMPRESA */
-
     .experience-info h3 {
-      font-size:
-        clamp(17px, 1.55vw, 22px);
+      font-size: clamp(17px, 1.55vw, 22px);
 
       font-weight: 400;
 
       line-height: 1.15;
 
-      letter-spacing:
-        -.02em;
+      letter-spacing: -.02em;
 
       margin-bottom: 7px;
     }
 
-
-    /* CARGO */
-
     .experience-role {
       font-size: 12px;
 
-      letter-spacing:
-        .04em;
+      letter-spacing: .04em;
 
       margin-bottom: 17px;
 
       opacity: .72;
     }
-
-
-    /* DESCRIÇÃO */
 
     .experience-description {
       list-style: none;
@@ -417,7 +315,6 @@
       max-width: 760px;
 
       display: flex;
-
       flex-direction: column;
 
       gap: 6px;
@@ -439,18 +336,16 @@
       position: absolute;
 
       left: 0;
-
       top: 0;
     }
 
 
-    /* =====================================================
+    /* =========================================
        FORMAÇÃO
-    ===================================================== */
+    ========================================= */
 
     .education-list {
       display: flex;
-
       flex-direction: column;
 
       gap: 38px;
@@ -470,20 +365,17 @@
     .education-date {
       font-size: 12px;
 
-      letter-spacing:
-        .04em;
+      letter-spacing: .04em;
 
       opacity: .70;
     }
 
     .education-info h3 {
-      font-size:
-        clamp(17px, 1.55vw, 22px);
+      font-size: clamp(17px, 1.55vw, 22px);
 
       font-weight: 400;
 
-      letter-spacing:
-        -.02em;
+      letter-spacing: -.02em;
 
       margin-bottom: 7px;
     }
@@ -497,9 +389,9 @@
     }
 
 
-    /* =====================================================
-       FERRAMENTAS + IDIOMAS
-    ===================================================== */
+    /* =========================================
+       FERRAMENTAS E IDIOMAS
+    ========================================= */
 
     .skills-columns {
       display: grid;
@@ -514,28 +406,21 @@
     .skills-block h3 {
       margin-bottom: 24px;
 
-      font-size:
-        clamp(20px, 2vw, 29px);
+      font-size: clamp(20px, 2vw, 29px);
 
       font-weight: 400;
 
-      letter-spacing:
-        -.03em;
+      letter-spacing: -.03em;
 
-      text-transform:
-        lowercase;
+      text-transform: lowercase;
     }
-
-
-    /* LINHAS */
 
     .skill-row {
       display: flex;
 
       align-items: baseline;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       gap: 30px;
 
@@ -555,11 +440,9 @@
     .skill-level {
       font-size: 11px;
 
-      letter-spacing:
-        .05em;
+      letter-spacing: .05em;
 
-      text-transform:
-        lowercase;
+      text-transform: lowercase;
 
       opacity: .65;
 
@@ -567,15 +450,14 @@
     }
 
 
-    /* =====================================================
+    /* =========================================
        RODAPÉ
-    ===================================================== */
+    ========================================= */
 
     .footer {
       display: flex;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       align-items: center;
 
@@ -589,15 +471,13 @@
 
       font-size: 9px;
 
-      letter-spacing:
-        .08em;
+      letter-spacing: .08em;
 
       opacity: .7;
     }
 
     .footer a {
-      transition:
-        opacity .25s ease;
+      transition: opacity .25s ease;
     }
 
     .footer a:hover {
@@ -605,16 +485,11 @@
     }
 
 
-    /* =====================================================
+    /* =========================================
        MOBILE
-    ===================================================== */
+    ========================================= */
 
     @media (max-width: 700px) {
-
-
-      /* =================================================
-         FUNDO GIRADO
-      ================================================= */
 
       .fixed-background {
         inset: auto;
@@ -630,14 +505,8 @@
           rotate(90deg);
 
         background-size: cover;
-
         background-position: center;
       }
-
-
-      /* =================================================
-         TOPO
-      ================================================= */
 
       .top-bar {
         padding:
@@ -649,9 +518,6 @@
         font-size: 10px;
       }
 
-
-      /* IDENTIDADE */
-
       .top-identity {
         gap: 6px;
       }
@@ -662,14 +528,7 @@
 
       .top-name {
         font-size: 10px;
-
-        text-transform: none;
       }
-
-
-      /* =================================================
-         CONTEÚDO
-      ================================================= */
 
       .about-content {
         padding:
@@ -679,9 +538,7 @@
       }
 
 
-      /* =================================================
-         SOBRE MIM
-      ================================================= */
+      /* SOBRE MIM */
 
       .profile {
         display: block;
@@ -689,24 +546,17 @@
         padding-bottom: 62px;
       }
 
-
-      /* FOTO BEM MENOR */
-
       .profile-photo {
-        width: 31vw;
+        width: 27vw;
 
-        max-width: 125px;
+        max-width: 112px;
 
-        min-width: 105px;
+        min-width: 92px;
 
-        aspect-ratio:
-          3 / 4;
+        aspect-ratio: 3 / 4;
 
-        margin-bottom: 27px;
+        margin-bottom: 24px;
       }
-
-
-      /* TEXTO */
 
       .profile-text {
         max-width: 100%;
@@ -725,20 +575,13 @@
 
         letter-spacing: 0;
 
-        /*
-          mantém justificado também
-          no celular
-        */
-
         text-align: justify;
 
         text-justify: inter-word;
       }
 
 
-      /* =================================================
-         SEÇÕES
-      ================================================= */
+      /* SEÇÕES */
 
       .section {
         padding:
@@ -757,12 +600,7 @@
       }
 
 
-      /* =================================================
-         EXPERIÊNCIA
-
-         MESMA ESTRUTURA DO DESKTOP:
-         DATA | CONTEÚDO
-      ================================================= */
+      /* EXPERIÊNCIA */
 
       .experience-list {
         gap: 38px;
@@ -817,9 +655,7 @@
       }
 
 
-      /* =================================================
-         FORMAÇÃO
-      ================================================= */
+      /* FORMAÇÃO */
 
       .education-list {
         gap: 31px;
@@ -856,13 +692,10 @@
       }
 
 
-      /* =================================================
-         FERRAMENTAS + IDIOMAS
-      ================================================= */
+      /* FERRAMENTAS E IDIOMAS */
 
       .skills-columns {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 50px;
       }
@@ -888,9 +721,7 @@
       }
 
 
-      /* =================================================
-         RODAPÉ
-      ================================================= */
+      /* RODAPÉ */
 
       .footer {
         padding:
@@ -903,16 +734,14 @@
     }
 
 
-    /* =====================================================
-       CELULARES MUITO ESTREITOS
-    ===================================================== */
-
     @media (max-width: 390px) {
 
       .profile-photo {
-        width: 30vw;
+        width: 26vw;
 
-        max-width: 115px;
+        max-width: 105px;
+
+        min-width: 88px;
       }
 
       .experience-item,
@@ -938,23 +767,15 @@
 <body>
 
 
-  <!-- =====================================================
-       FUNDO
-  ===================================================== -->
-
   <div class="fixed-background"></div>
 
-
-  <!-- =====================================================
-       TRANSPARÊNCIA
-  ===================================================== -->
 
   <main class="glass-page">
 
 
-    <!-- =================================================
+    <!-- =========================================
          TOPO
-    ================================================== -->
+    ========================================== -->
 
     <header class="top-bar">
 
@@ -983,40 +804,21 @@
     </header>
 
 
-    <!-- =================================================
-         CONTEÚDO
-    ================================================== -->
-
     <div class="about-content">
 
 
-      <!-- =================================================
+      <!-- =========================================
            SOBRE MIM
-      ================================================== -->
+      ========================================== -->
 
       <section class="profile reveal">
 
 
         <div class="profile-photo">
 
-          <!--
-            ?v=4 força navegador/GitHub a buscar
-            a versão atual da imagem e evita
-            aquele quadrado vazio do cache.
-          -->
-
           <img
-            src="eu.jpg?v=4"
+            src="/ana-luiza-2/eu.jpg?v=10"
             alt="Ana Luiza Campos"
-            onerror="
-              if (!this.dataset.fallback) {
-                this.dataset.fallback='1';
-                this.src='eu.JPG?v=4';
-              } else if (this.dataset.fallback === '1') {
-                this.dataset.fallback='2';
-                this.src='Eu.jpg?v=4';
-              }
-            "
           >
 
         </div>
@@ -1044,9 +846,9 @@
       </section>
 
 
-      <!-- =================================================
+      <!-- =========================================
            EXPERIÊNCIA
-      ================================================== -->
+      ========================================== -->
 
       <section class="section reveal">
 
@@ -1056,10 +858,6 @@
         </h2>
 
 
-        <!-- ===============================================
-             ARQUITETURA
-        ================================================ -->
-
         <div class="area-title">
           arquitetura
         </div>
@@ -1067,8 +865,6 @@
 
         <div class="experience-list">
 
-
-          <!-- TERESA BARRA -->
 
           <article class="experience-item">
 
@@ -1106,8 +902,7 @@
                 </li>
 
                 <li>
-                  Gestão de referências e curadoria de conteúdo
-                  no Pinterest.
+                  Gestão de referências e curadoria de conteúdo no Pinterest.
                 </li>
 
               </ul>
@@ -1117,8 +912,6 @@
 
           </article>
 
-
-          <!-- ACMR -->
 
           <article class="experience-item">
 
@@ -1161,10 +954,6 @@
         </div>
 
 
-        <!-- ===============================================
-             SOCIAL MEDIA
-        ================================================ -->
-
         <div class="area-title social">
           social media & comunicação
         </div>
@@ -1172,8 +961,6 @@
 
         <div class="experience-list">
 
-
-          <!-- DR GABRIEL -->
 
           <article class="experience-item">
 
@@ -1229,8 +1016,6 @@
           </article>
 
 
-          <!-- ANÁ VELAS -->
-
           <article class="experience-item">
 
 
@@ -1280,8 +1065,6 @@
 
           </article>
 
-
-          <!-- PALERMO -->
 
           <article class="experience-item">
 
@@ -1339,9 +1122,9 @@
       </section>
 
 
-      <!-- =================================================
+      <!-- =========================================
            FORMAÇÃO
-      ================================================== -->
+      ========================================== -->
 
       <section class="section reveal">
 
@@ -1408,17 +1191,15 @@
       </section>
 
 
-      <!-- =================================================
-           FERRAMENTAS + IDIOMAS
-      ================================================== -->
+      <!-- =========================================
+           FERRAMENTAS E IDIOMAS
+      ========================================== -->
 
       <section class="section reveal">
 
 
         <div class="skills-columns">
 
-
-          <!-- FERRAMENTAS -->
 
           <div class="skills-block">
 
@@ -1433,30 +1214,25 @@
               <span class="skill-level">avançado</span>
             </div>
 
-
             <div class="skill-row">
               <span class="skill-name">SketchUp</span>
               <span class="skill-level">intermediário</span>
             </div>
-
 
             <div class="skill-row">
               <span class="skill-name">Archicad</span>
               <span class="skill-level">iniciante</span>
             </div>
 
-
             <div class="skill-row">
               <span class="skill-name">Canva</span>
               <span class="skill-level">avançado</span>
             </div>
 
-
             <div class="skill-row">
               <span class="skill-name">CapCut</span>
               <span class="skill-level">avançado</span>
             </div>
-
 
             <div class="skill-row">
               <span class="skill-name">Microsoft Office</span>
@@ -1466,8 +1242,6 @@
 
           </div>
 
-
-          <!-- IDIOMAS -->
 
           <div class="skills-block">
 
@@ -1482,12 +1256,10 @@
               <span class="skill-level">nativo</span>
             </div>
 
-
             <div class="skill-row">
               <span class="skill-name">Inglês</span>
               <span class="skill-level">avançado / fluente</span>
             </div>
-
 
             <div class="skill-row">
               <span class="skill-name">Espanhol</span>
@@ -1507,10 +1279,6 @@
     </div>
 
 
-    <!-- =================================================
-         RODAPÉ
-    ================================================== -->
-
     <footer class="footer">
 
       <span>
@@ -1526,10 +1294,6 @@
 
   </main>
 
-
-  <!-- =====================================================
-       REVEAL
-  ===================================================== -->
 
   <script>
 
@@ -1561,23 +1325,18 @@
 
         {
           threshold: 0.10,
-
-          rootMargin:
-            "0px 0px -25px 0px"
+          rootMargin: "0px 0px -25px 0px"
         }
 
       );
 
 
     revealElements.forEach(element => {
-
       revealObserver.observe(element);
-
     });
 
   </script>
 
 
 </body>
-
 </html>
