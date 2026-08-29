@@ -141,8 +141,8 @@
 
 
     /* =====================================================
-       FAIXA DE EXPERIÊNCIA
-       ~5 CM NO DESKTOP
+       FAIXA DO AZULEJO
+       DESKTOP
     ===================================================== */
 
     .experience {
@@ -175,47 +175,18 @@
     }
 
     .tile-symbol {
-      width: 76px;
+      width: 82px;
       height: auto;
     }
 
     .experience-title {
-      margin-top: 15px;
+      margin-top: 16px;
 
-      font-size: 14px;
+      font-size: 11px;
 
-      letter-spacing: .24em;
-
-      text-transform: lowercase;
-    }
-
-
-    /* =====================================================
-       ARRASTE PARA BAIXO
-    ===================================================== */
-
-    .drag-down {
-      position: absolute;
-
-      left: 18px;
-
-      top: 50%;
-
-      width: 150px;
-
-      transform:
-        translate(-49%, -50%)
-        rotate(-90deg);
-
-      text-align: center;
-
-      font-size: 10px;
-
-      letter-spacing: .16em;
+      letter-spacing: .20em;
 
       text-transform: lowercase;
-
-      white-space: nowrap;
     }
 
 
@@ -302,7 +273,7 @@
 
 
     /* =====================================================
-       HOVER
+       HOVER DESKTOP
     ===================================================== */
 
     .project-overlay {
@@ -452,6 +423,8 @@
 
     @media (max-width: 700px) {
 
+      /* FUNDO GIRADO */
+
       .fixed-background {
         inset: auto;
 
@@ -470,15 +443,18 @@
       }
 
 
-      /* Primeira tela termina EXATAMENTE na faixa */
+      /* =================================================
+         PRIMEIRA TELA
+         faixa pequena
+      ================================================= */
 
       .home {
-        height: calc(100svh - 220px);
-        min-height: calc(100svh - 220px);
+        height: calc(100svh - 88px);
+        min-height: calc(100svh - 88px);
       }
 
       .experience {
-        height: 220px;
+        height: 88px;
       }
 
 
@@ -521,34 +497,36 @@
       }
 
 
-      /* EXPERIÊNCIA */
+      /* =================================================
+         AZULEJO + ARRASTE PARA CIMA
+      ================================================= */
+
+      .experience-content {
+        transform: none;
+      }
 
       .tile-symbol {
-        width: 84px;
+        width: 48px;
       }
 
       .experience-title {
-        margin-top: 16px;
+        margin-top: 8px;
 
-        font-size: 14px;
-      }
+        font-size: 8px;
 
-      .drag-down {
-        left: 15px;
-
-        width: 140px;
-
-        font-size: 9px;
+        letter-spacing: .16em;
       }
 
 
-      /* PROJETOS */
+      /* =================================================
+         PROJETOS HORIZONTAIS
+      ================================================= */
 
       .projects-section {
         padding:
-          26px
           20px
-          28px;
+          18px
+          24px;
       }
 
       .projects-grid {
@@ -559,30 +537,45 @@
       }
 
       .project {
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 1.45 / 1;
+
+        transform: translateY(28px);
+
+        transition:
+          opacity .75s ease,
+          transform .75s ease;
       }
 
 
-      /* No touch o texto fica visível */
+      /* =================================================
+         MOBILE:
+         SEM TEXTO ATÉ TOCAR
+      ================================================= */
 
       .project-overlay {
-        opacity: 1;
+        opacity: 0;
 
-        align-items: flex-end;
-
+        align-items: center;
         justify-content: center;
 
-        padding: 11px;
+        padding: 12px;
 
-        background:
-          linear-gradient(
-            to top,
-            rgba(0,0,0,.53),
-            rgba(0,0,0,0) 60%
-          );
+        background: rgba(225, 214, 195, .34);
 
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
+        -webkit-backdrop-filter: blur(9px);
+        backdrop-filter: blur(9px);
+
+        pointer-events: none;
+
+        transition: opacity .28s ease;
+      }
+
+      .project.mobile-open .project-overlay {
+        opacity: 1;
+      }
+
+      .project.mobile-open img {
+        transform: scale(1.02);
       }
 
       .project-info {
@@ -600,17 +593,19 @@
       }
 
 
-      /* CONTATO BEM MAIS PRÓXIMO */
+      /* =================================================
+         CONTATO
+      ================================================= */
 
       .contact {
         padding:
-          30px
-          26px
-          55px;
+          28px
+          24px
+          50px;
       }
 
       .contact h2 {
-        margin-bottom: 18px;
+        margin-bottom: 17px;
 
         font-size: 27px;
       }
@@ -622,6 +617,7 @@
       .contact-link {
         font-size: 14px;
       }
+
     }
 
 
@@ -633,6 +629,15 @@
 
       .intro p {
         font-size: 8px;
+      }
+
+      .projects-section {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .projects-grid {
+        gap: 8px;
       }
 
     }
@@ -681,15 +686,10 @@
 
 
   <!-- =====================================================
-       EXPERIÊNCIA
+       AZULEJO + ARRASTE
   ===================================================== -->
 
   <section class="experience">
-
-    <div class="drag-down">
-      arraste para baixo
-    </div>
-
 
     <div class="experience-content">
 
@@ -700,7 +700,7 @@
       >
 
       <div class="experience-title">
-        experiência
+        arraste para cima
       </div>
 
     </div>
@@ -724,7 +724,7 @@
       <div class="projects-grid">
 
 
-        <!-- 01 — 303 -->
+        <!-- 01 -->
 
         <a
           href="303.html"
@@ -755,7 +755,7 @@
         </a>
 
 
-        <!-- 02 — CONJUNTO EM DESNÍVEL -->
+        <!-- 02 -->
 
         <a
           href="conjunto-em-desnivel.html"
@@ -786,7 +786,7 @@
         </a>
 
 
-        <!-- 03 — OFICINA BISTROL -->
+        <!-- 03 -->
 
         <a
           href="oficina-bistrol.html"
@@ -817,7 +817,7 @@
         </a>
 
 
-        <!-- 04 — CAMINHOS SOBRE A ÁGUA -->
+        <!-- 04 -->
 
         <a
           href="caminhos-sobre-a-agua.html"
@@ -848,7 +848,7 @@
         </a>
 
 
-        <!-- 05 — HABITAR CAMPOS ELÍSEOS -->
+        <!-- 05 -->
 
         <a
           href="habitar-campos-eliseos.html"
@@ -879,7 +879,7 @@
         </a>
 
 
-        <!-- 06 — TUDO SOBRE O AMOR -->
+        <!-- 06 -->
 
         <a
           href="tudo-sobre-o-amor.html"
@@ -910,7 +910,7 @@
         </a>
 
 
-        <!-- 07 — TERESA BARRA -->
+        <!-- 07 TERESA BARRA -->
 
         <a
           href="teresa-barra.html"
@@ -941,7 +941,7 @@
         </a>
 
 
-        <!-- 08 — ACMR -->
+        <!-- 08 ACMR -->
 
         <a
           href="acmr.html"
@@ -1120,10 +1120,14 @@
 
 
   <!-- =====================================================
-       ANIMAÇÃO DE SCROLL
+       REVEAL + DUPLO TOQUE MOBILE
   ===================================================== -->
 
   <script>
+
+    /* ===============================================
+       REVELAÇÃO DOS PROJETOS
+    =============================================== */
 
     const projects =
       document.querySelectorAll(".reveal");
@@ -1152,8 +1156,8 @@
         },
 
         {
-          threshold: 0.12,
-          rootMargin: "0px 0px -35px 0px"
+          threshold: 0.15,
+          rootMargin: "0px 0px -25px 0px"
         }
 
       );
@@ -1164,6 +1168,10 @@
     });
 
 
+
+    /* ===============================================
+       CONTATO
+    =============================================== */
 
     const contact =
       document.querySelector(".contact-inner");
@@ -1201,6 +1209,100 @@
     if (contact) {
       contactObserver.observe(contact);
     }
+
+
+
+    /* ===============================================
+       MOBILE:
+       1º TOQUE = MOSTRA INFO
+       2º TOQUE = ABRE PROJETO
+    =============================================== */
+
+    const isMobile =
+      window.matchMedia("(max-width: 700px)");
+
+
+    const projectLinks =
+      document.querySelectorAll(".project");
+
+
+    projectLinks.forEach(project => {
+
+      project.addEventListener(
+        "click",
+        function(event) {
+
+          if (!isMobile.matches) {
+            return;
+          }
+
+
+          if (
+            !this.classList.contains("mobile-open")
+          ) {
+
+            event.preventDefault();
+
+
+            projectLinks.forEach(other => {
+
+              if (other !== this) {
+
+                other.classList.remove(
+                  "mobile-open"
+                );
+
+              }
+
+            });
+
+
+            this.classList.add(
+              "mobile-open"
+            );
+
+          }
+
+        }
+
+      );
+
+    });
+
+
+
+    /* ===============================================
+       TOCAR FORA FECHA O CARD
+    =============================================== */
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        if (!isMobile.matches) {
+          return;
+        }
+
+
+        const clickedProject =
+          event.target.closest(".project");
+
+
+        if (!clickedProject) {
+
+          projectLinks.forEach(project => {
+
+            project.classList.remove(
+              "mobile-open"
+            );
+
+          });
+
+        }
+
+      }
+
+    );
 
   </script>
 
