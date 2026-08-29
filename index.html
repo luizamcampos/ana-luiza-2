@@ -445,7 +445,7 @@
 
       /* =================================================
          PRIMEIRA TELA
-         faixa pequena
+         FAIXA DE APROX. 2 CM
       ================================================= */
 
       .home {
@@ -548,8 +548,8 @@
 
 
       /* =================================================
-         MOBILE:
-         SEM TEXTO ATÉ TOCAR
+         MOBILE
+         PRIMEIRO TOQUE MOSTRA AS INFORMAÇÕES
       ================================================= */
 
       .project-overlay {
@@ -724,7 +724,7 @@
       <div class="projects-grid">
 
 
-        <!-- 01 -->
+        <!-- 01 — 303 -->
 
         <a
           href="303.html"
@@ -755,7 +755,7 @@
         </a>
 
 
-        <!-- 02 -->
+        <!-- 02 — CONJUNTO EM DESNÍVEL -->
 
         <a
           href="conjunto-em-desnivel.html"
@@ -786,7 +786,7 @@
         </a>
 
 
-        <!-- 03 -->
+        <!-- 03 — OFICINA BISTROL -->
 
         <a
           href="oficina-bistrol.html"
@@ -817,7 +817,7 @@
         </a>
 
 
-        <!-- 04 -->
+        <!-- 04 — CAMINHOS SOBRE A ÁGUA -->
 
         <a
           href="caminhos-sobre-a-agua.html"
@@ -848,7 +848,7 @@
         </a>
 
 
-        <!-- 05 -->
+        <!-- 05 — HABITAR CAMPOS ELÍSEOS -->
 
         <a
           href="habitar-campos-eliseos.html"
@@ -879,7 +879,7 @@
         </a>
 
 
-        <!-- 06 -->
+        <!-- 06 — TUDO SOBRE O AMOR -->
 
         <a
           href="tudo-sobre-o-amor.html"
@@ -910,7 +910,7 @@
         </a>
 
 
-        <!-- 07 TERESA BARRA -->
+        <!-- 07 — TERESA BARRA -->
 
         <a
           href="teresa-barra.html"
@@ -941,7 +941,7 @@
         </a>
 
 
-        <!-- 08 ACMR -->
+        <!-- 08 — ACMR -->
 
         <a
           href="acmr.html"
@@ -1000,7 +1000,7 @@
           <!-- EMAIL -->
 
           <a
-            href="mailto:SEUEMAIL@EMAIL.COM"
+            href="mailto:analuizacamposarq@outlook.com"
             class="contact-link"
           >
 
@@ -1032,9 +1032,9 @@
           <!-- LINKEDIN -->
 
           <a
-            href="#"
+            href="https://www.linkedin.com/in/ana-luiza-campos-b55429319/?skipRedirect=true"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="contact-link"
           >
 
@@ -1071,10 +1071,12 @@
           </a>
 
 
-          <!-- TELEFONE -->
+          <!-- WHATSAPP -->
 
           <a
-            href="tel:+5500000000000"
+            href="https://wa.me/5511981279814"
+            target="_blank"
+            rel="noopener noreferrer"
             class="contact-link"
           >
 
@@ -1103,7 +1105,7 @@
             </span>
 
             <span>
-              telefone
+              whatsapp
             </span>
 
           </a>
@@ -1170,7 +1172,7 @@
 
 
     /* ===============================================
-       CONTATO
+       REVELAÇÃO DO CONTATO
     =============================================== */
 
     const contact =
@@ -1213,9 +1215,13 @@
 
 
     /* ===============================================
-       MOBILE:
-       1º TOQUE = MOSTRA INFO
-       2º TOQUE = ABRE PROJETO
+       MOBILE
+
+       PRIMEIRO TOQUE:
+       MOSTRA TRANSPARÊNCIA + INFORMAÇÕES
+
+       SEGUNDO TOQUE:
+       ABRE O PROJETO
     =============================================== */
 
     const isMobile =
@@ -1244,6 +1250,8 @@
             event.preventDefault();
 
 
+            /* fecha qualquer outro card aberto */
+
             projectLinks.forEach(other => {
 
               if (other !== this) {
@@ -1257,11 +1265,21 @@
             });
 
 
+            /* abre o card tocado */
+
             this.classList.add(
               "mobile-open"
             );
 
           }
+
+          /*
+            Se já tiver mobile-open,
+            não bloqueamos o clique.
+
+            Portanto:
+            segundo toque = abre o href.
+          */
 
         }
 
@@ -1272,7 +1290,8 @@
 
 
     /* ===============================================
-       TOCAR FORA FECHA O CARD
+       TOQUE FORA DO PROJETO
+       FECHA O CARD ABERTO
     =============================================== */
 
     document.addEventListener(
