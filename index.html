@@ -63,7 +63,6 @@
 
       width: 100%;
       height: calc(100svh - 190px);
-
       min-height: calc(100svh - 190px);
     }
 
@@ -418,6 +417,25 @@
 
 
     /* =====================================================
+       RODAPÉ
+    ===================================================== */
+
+    .footer {
+      padding:
+        0
+        clamp(42px, 6vw, 100px)
+        28px;
+
+      font-size: 9px;
+      font-weight: 400;
+
+      letter-spacing: .08em;
+
+      opacity: .7;
+    }
+
+
+    /* =====================================================
        MOBILE
     ===================================================== */
 
@@ -548,7 +566,6 @@
 
 
       /* =================================================
-         MOBILE
          PRIMEIRO TOQUE MOSTRA AS INFORMAÇÕES
       ================================================= */
 
@@ -616,6 +633,20 @@
 
       .contact-link {
         font-size: 14px;
+      }
+
+
+      /* =================================================
+         RODAPÉ MOBILE
+      ================================================= */
+
+      .footer {
+        padding:
+          0
+          24px
+          24px;
+
+        font-size: 8px;
       }
 
     }
@@ -1118,6 +1149,15 @@
     </section>
 
 
+    <!-- ===================================================
+         RODAPÉ
+    ==================================================== -->
+
+    <footer class="footer">
+      Ana Luiza Campos © 2026
+    </footer>
+
+
   </div>
 
 
@@ -1217,11 +1257,8 @@
     /* ===============================================
        MOBILE
 
-       PRIMEIRO TOQUE:
-       MOSTRA TRANSPARÊNCIA + INFORMAÇÕES
-
-       SEGUNDO TOQUE:
-       ABRE O PROJETO
+       1º TOQUE = MOSTRA INFORMAÇÕES
+       2º TOQUE = ABRE PROJETO
     =============================================== */
 
     const isMobile =
@@ -1250,7 +1287,7 @@
             event.preventDefault();
 
 
-            /* fecha qualquer outro card aberto */
+            /* FECHA OS OUTROS */
 
             projectLinks.forEach(other => {
 
@@ -1265,7 +1302,7 @@
             });
 
 
-            /* abre o card tocado */
+            /* ABRE ESTE */
 
             this.classList.add(
               "mobile-open"
@@ -1274,11 +1311,9 @@
           }
 
           /*
-            Se já tiver mobile-open,
-            não bloqueamos o clique.
-
-            Portanto:
-            segundo toque = abre o href.
+            Se já estiver aberto:
+            segundo toque segue normalmente
+            para o href do projeto.
           */
 
         }
@@ -1290,8 +1325,7 @@
 
 
     /* ===============================================
-       TOQUE FORA DO PROJETO
-       FECHA O CARD ABERTO
+       TOCAR FORA FECHA O CARD
     =============================================== */
 
     document.addEventListener(
