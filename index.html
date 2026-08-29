@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ana Luiza Campos</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      color: white;
+      background: #111;
+    }
+
+    /* =========================
+       FUNDO FIXO
+    ========================= */
+
+    .background-fixed {
+      position: fixed;
+      inset: 0;
+
+      background-image: url("fundo.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      z-index: -2;
+    }
+
+    .background-overlay {
+      position: fixed;
+      inset: 0;
+
+      background: rgba(0,0,0,0.05);
+
+      z-index: -1;
+      pointer-events: none;
+    }
+
+
+    /* =========================
+       HOME
+    ========================= */
+
+    .hero {
+      position: relative;
+
+      width: 100%;
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+    }
+
+
+    /* =========================
+       MENU SUPERIOR
+    ========================= */
+
+    .top-menu {
+      position: absolute;
+
+      top: 28px;
+      left: 40px;
+
+      display: flex;
+      gap: 34px;
+
+      z-index: 20;
+    }
+
+    .top-menu a {
+      color: white;
+      text-decoration: none;
+
+      font-size: 12px;
+      font-weight: 400;
+
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+
+      transition: opacity 0.3s ease;
+    }
+
+    .top-menu a:hover {
+      opacity: 0.55;
+    }
+
+
+    /* =========================
+       NOME CENTRAL
+    ========================= */
+
+    .hero-title {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 100%;
+
+      text-align: center;
+
+      padding: 0 30px;
+    }
+
+    .hero-title h1 {
+      font-size: clamp(42px, 6vw, 92px);
+
+      font-weight: 400;
+
+      line-height: 0.95;
+
+      letter-spacing: -0.04em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-title p {
+      margin-top: 18px;
+
+      font-size: 11px;
+      font-weight: 400;
+
+      letter-spacing: 0.24em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       FAIXA TRANSPARENTE
+    ========================= */
+
+    .experience-panel {
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+
+      height: 170px;
+
+      background: rgba(240, 232, 220, 0.28);
+
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+
+      border-top: 1px solid rgba(255,255,255,0.18);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+
+      z-index: 10;
+    }
+
+
+    /* =========================
+       ESPIRAL
+    ========================= */
+
+    .spiral {
+      width: 52px;
+      height: 52px;
+
+      margin-bottom: 12px;
+    }
+
+    .spiral img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+
+    /* =========================
+       EXPERIÊNCIA
+    ========================= */
+
+    .experience-title {
+      font-size: 10px;
+
+      letter-spacing: 0.5em;
+
+      text-transform: uppercase;
+
+      margin-left: 0.5em;
+    }
+
+
+    /* =========================
+       SETA
+    ========================= */
+
+    .arrow {
+      margin-top: 13px;
+
+      font-size: 25px;
+
+      font-weight: 200;
+
+      animation: arrowMove 1.7s infinite ease-in-out;
+    }
+
+    @keyframes arrowMove {
+
+      0% {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: translateY(7px);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+    }
+
+
+    /* =========================
+       CONTEÚDO
+       SOBE SOBRE O FUNDO
+    ========================= */
+
+    .content {
+      position: relative;
+
+      width: 100%;
+
+      min-height: 100vh;
+
+      background: rgba(235, 225, 210, 0.72);
+
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      color: #151515;
+
+      z-index: 5;
+    }
+
+
+    /* =========================
+       PROJETOS
+    ========================= */
+
+    .projects {
+      padding: 100px 5vw 130px;
+    }
+
+    .projects-header {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: flex-end;
+
+      margin-bottom: 70px;
+    }
+
+    .projects-header h2 {
+      font-size: clamp(48px, 8vw, 120px);
+
+      font-weight: 400;
+
+      letter-spacing: -0.06em;
+
+      text-transform: uppercase;
+    }
+
+    .projects-header span {
+      font-size: 11px;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      padding-bottom: 14px;
+    }
+
+
+    /* =========================
+       PROJETO
+    ========================= */
+
+    .project {
+      border-top: 1px solid rgba(0,0,0,0.25);
+
+      padding: 25px 0;
+
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      align-items: center;
+
+      text-decoration: none;
+
+      color: #151515;
+
+      transition: padding 0.35s ease;
+    }
+
+    .project:hover {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .project-info h3 {
+      font-size: clamp(24px, 4vw, 55px);
+
+      font-weight: 400;
+
+      letter-spacing: -0.04em;
+    }
+
+    .project-info p {
+      margin-top: 7px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.12em;
+
+      opacity: 0.65;
+    }
+
+    .project-year {
+      font-size: 13px;
+
+      letter-spacing: 0.08em;
+    }
+
+
+    /* =========================
+       SOBRE
+    ========================= */
+
+    .about {
+      min-height: 100vh;
+
+      padding: 120px 5vw;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .about-inner {
+      max-width: 900px;
+    }
+
+    .about h2 {
+      font-size: clamp(50px, 9vw, 125px);
+
+      font-weight: 400;
+
+      letter-spacing: -0.06em;
+
+      margin-bottom: 50px;
+    }
+
+    .about p {
+      font-size: clamp(20px, 2.2vw, 34px);
+
+      line-height: 1.25;
+
+      font-weight: 400;
+    }
+
+
+    /* =========================
+       CONTATO
+    ========================= */
+
+    .contact {
+      min-height: 80vh;
+
+      padding: 120px 5vw;
+
+      display: flex;
+
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact h2 {
+      font-size: clamp(55px, 10vw, 140px);
+
+      font-weight: 400;
+
+      letter-spacing: -0.07em;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+
+      margin-top: 70px;
+    }
+
+    .contact-links a {
+      color: #151515;
+
+      text-decoration: none;
+
+      font-size: clamp(22px, 3vw, 42px);
+
+      width: fit-content;
+    }
+
+    .contact-links a:hover {
+      opacity: 0.5;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      .top-menu {
+        top: 22px;
+        left: 20px;
+
+        gap: 22px;
+      }
+
+      .top-menu a {
+        font-size: 10px;
+      }
+
+      .hero-title {
+        padding: 0 20px;
+      }
+
+      .hero-title h1 {
+        font-size: 42px;
+      }
+
+      .hero-title p {
+        font-size: 8px;
+
+        letter-spacing: 0.18em;
+      }
+
+      .experience-panel {
+        height: 145px;
+      }
+
+      .spiral {
+        width: 43px;
+        height: 43px;
+      }
+
+      .experience-title {
+        font-size: 8px;
+      }
+
+      .projects {
+        padding: 80px 20px 100px;
+      }
+
+      .projects-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin-bottom: 40px;
+      }
+
+      .project {
+        grid-template-columns: 1fr auto;
+      }
+
+      .about,
+      .contact {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       FUNDO
+  ========================== -->
+
+  <div class="background-fixed"></div>
+  <div class="background-overlay"></div>
+
+
+
+  <!-- =========================
+       HOME
+  ========================== -->
+
+  <section class="hero">
+
+    <nav class="top-menu">
+
+      <a href="#sobre">
+        Sobre mim
+      </a>
+
+      <a href="#contato">
+        Contato
+      </a>
+
+    </nav>
+
+
+
+    <div class="hero-title">
+
+      <h1>
+        Ana Luiza Campos
+      </h1>
+
+      <p>
+        Estudante de Arquitetura e Urbanismo
+      </p>
+
+    </div>
+
+
+
+    <a href="#projetos" class="experience-panel" style="color:white; text-decoration:none;">
+
+
+      <!--
+      Coloque seu PNG aqui.
+
+      Exemplo:
+      <div class="spiral">
+        <img src="espiral.png" alt="">
+      </div>
+      -->
+
+
+      <!-- ESPIRAL TEMPORÁRIA EM SVG -->
+
+      <div class="spiral">
+
+        <svg
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <path
+            d="
+            M50 50
+            C50 38 65 38 65 50
+            C65 69 37 69 37 49
+            C37 22 76 22 76 51
+            C76 86 25 86 25 48
+            C25 5 88 5 88 51
+            "
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+
+        </svg>
+
+      </div>
+
+
+      <div class="experience-title">
+        Experiência
+      </div>
+
+
+      <div class="arrow">
+        ↓
+      </div>
+
+
+    </a>
+
+  </section>
+
+
+
+  <!-- =========================
+       PARTE QUE SOBE NO SCROLL
+  ========================== -->
+
+  <main class="content">
+
+
+    <!-- PROJETOS -->
+
+    <section
+      class="projects"
+      id="projetos"
+    >
+
+      <div class="projects-header">
+
+        <h2>
+          Projetos
+        </h2>
+
+        <span>
+          Arquitetura
+        </span>
+
+      </div>
+
+
+
+      <a
+        href="#"
+        class="project"
+      >
+
+        <div class="project-info">
+
+          <h3>
+            303
+          </h3>
+
+          <p>
+            Arquitetura • São Paulo
+          </p>
+
+        </div>
+
+        <div class="project-year">
+          2026
+        </div>
+
+      </a>
+
+
+
+      <a
+        href="#"
+        class="project"
+      >
+
+        <div class="project-info">
+
+          <h3>
+            Conjunto em desnível
+          </h3>
+
+          <p>
+            Habitação
+          </p>
+
+        </div>
+
+        <div class="project-year">
+          2025
+        </div>
+
+      </a>
+
+
+
+      <a
+        href="#"
+        class="project"
+      >
+
+        <div class="project-info">
+
+          <h3>
+            Oficina Bistrol
+          </h3>
+
+          <p>
+            Arquitetura
+          </p>
+
+        </div>
+
+        <div class="project-year">
+          2025
+        </div>
+
+      </a>
+
+
+
+      <a
+        href="#"
+        class="project"
+      >
+
+        <div class="project-info">
+
+          <h3>
+            Caminhos sobre a Água
+          </h3>
+
+          <p>
+            Represa Billings
+          </p>
+
+        </div>
+
+        <div class="project-year">
+          2025
+        </div>
+
+      </a>
+
+    </section>
+
+
+
+    <!-- SOBRE -->
+
+    <section
+      class="about"
+      id="sobre"
+    >
+
+      <div class="about-inner">
+
+        <h2>
+          Sobre mim
+        </h2>
+
+        <p>
+          Sou estudante de Arquitetura e Urbanismo e meu trabalho
+          transita entre arquitetura, imagem, comunicação e criação.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CONTATO -->
+
+    <section
+      class="contact"
+      id="contato"
+    >
+
+      <h2>
+        Contato
+      </h2>
+
+      <div class="contact-links">
+
+        <a href="mailto:seuemail@email.com">
+          Email
+        </a>
+
+        <a
+          href="#"
+          target="_blank"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="#"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+</body>
+</html>
