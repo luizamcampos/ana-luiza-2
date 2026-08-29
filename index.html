@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -12,12 +10,10 @@
 
   <title>Ana Luiza Campos</title>
 
-
   <style>
-
-    /* ==================================================
+    /* =========================================================
        RESET
-    ================================================== */
+    ========================================================= */
 
     * {
       margin: 0;
@@ -31,16 +27,9 @@
 
     body {
       margin: 0;
-
-      font-family:
-        Helvetica,
-        Arial,
-        sans-serif;
-
+      font-family: Helvetica, Arial, sans-serif;
+      background: #000;
       color: white;
-
-      background: #111;
-
       overflow-x: hidden;
     }
 
@@ -54,842 +43,645 @@
     }
 
 
-
-    /* ==================================================
+    /* =========================================================
        FUNDO FIXO
-    ================================================== */
+    ========================================================= */
 
-    .background {
-
+    .fixed-background {
       position: fixed;
-
-      top: 0;
-      left: 0;
-
-      width: 100vw;
-      height: 100dvh;
-
-      background-image:
-        url("fundo.jpg");
-
-      background-size: cover;
-
-      background-position: center;
-
-      background-repeat: no-repeat;
-
+      inset: 0;
       z-index: -10;
 
-      pointer-events: none;
+      background-image: url("fundo.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
 
-
-    /* ==================================================
+    /* =========================================================
        HOME
-    ================================================== */
+    ========================================================= */
 
-    .hero {
-
+    .home {
       position: relative;
-
       width: 100%;
-
-      height: 100dvh;
-
-      min-height: 100dvh;
-
-      overflow: hidden;
+      height: 100svh;
+      min-height: 100svh;
     }
 
 
-
-    /* ==================================================
+    /* =========================================================
        MENU
-    ================================================== */
+    ========================================================= */
 
     .menu {
-
       position: absolute;
-
-      top: 30px;
-      left: 34px;
+      top: 34px;
+      left: 42px;
 
       display: flex;
+      gap: 38px;
 
-      gap: 32px;
-
-      z-index: 30;
+      z-index: 20;
     }
 
     .menu a {
-
-      font-size: 12px;
-
+      font-size: 13px;
       font-weight: 400;
-
       text-transform: lowercase;
-
-      transition:
-        opacity 0.25s ease;
+      transition: opacity 0.25s ease;
     }
 
     .menu a:hover {
-      opacity: 0.5;
+      opacity: 0.55;
     }
 
 
+    /* =========================================================
+       NOME CENTRAL
+    ========================================================= */
 
-    /* ==================================================
-       NOME
-    ================================================== */
-
-    .identity {
-
+    .intro {
       position: absolute;
+      inset: 0;
 
-      top: 47%;
-      left: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
-      width: 100%;
-
-      padding:
-        0 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       text-align: center;
+      pointer-events: none;
 
-      z-index: 5;
+      padding: 30px;
     }
 
-    .identity h1 {
-
-      width: 100%;
-
-      margin: 0;
-
-      font-size:
-        clamp(45px, 5.7vw, 90px);
-
+    .intro h1 {
+      font-size: clamp(42px, 5.6vw, 88px);
+      line-height: 0.95;
       font-weight: 400;
 
-      line-height: 0.95;
-
       letter-spacing: -0.055em;
+      white-space: nowrap;
+    }
+
+    .intro p {
+      margin-top: 18px;
+
+      font-size: 11px;
+      font-weight: 400;
+
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+    }
+
+
+    /* =========================================================
+       ÁREA TRANSPARENTE / EXPERIÊNCIA
+    ========================================================= */
+
+    .experience {
+      position: relative;
+
+      min-height: 270px;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+    }
+
+    /*
+      Essa camada cria a transparência contínua.
+      Ela continua por trás de toda a área dos projetos.
+    */
+
+    .experience::before,
+    .projects-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: rgba(235, 225, 205, 0.26);
+
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+
+      z-index: 0;
+    }
+
+    .experience-content {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    /* AZULEJO */
+
+    .tile-symbol {
+      width: 76px;
+      height: auto;
+      object-fit: contain;
+    }
+
+
+    /* EXPERIÊNCIA */
+
+    .experience-title {
+      margin-top: 18px;
+
+      font-size: 14px;
+      font-weight: 400;
+
+      letter-spacing: 0.28em;
+      text-transform: lowercase;
+    }
+
+
+    /* ARRASTE PARA BAIXO */
+
+    .drag-down {
+      position: absolute;
+
+      left: 22px;
+      bottom: 32px;
+
+      z-index: 5;
+
+      font-size: 10px;
+      letter-spacing: 0.18em;
+
+      text-transform: lowercase;
+
+      transform: rotate(-90deg);
+      transform-origin: left bottom;
 
       white-space: nowrap;
 
-      text-align: center;
-    }
-
-    .identity p {
-
-      margin-top: 18px;
-
-      font-size:
-        clamp(9px, 0.82vw, 13px);
-
-      font-weight: 400;
-
-      letter-spacing: 0.18em;
-
-      line-height: 1.4;
-
-      text-transform: lowercase;
-
-      text-align: center;
+      opacity: 0.9;
     }
 
 
+    /* =========================================================
+       PROJETOS
+    ========================================================= */
 
-    /* ==================================================
-       TRANSPARÊNCIA / EXPERIÊNCIA
-    ================================================== */
-
-    .experience-panel {
-
-      position: absolute;
-
-      bottom: 0;
-      left: 0;
-
-      width: 100%;
-
-      height: 165px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background:
-        rgba(220, 210, 195, 0.26);
-
-      -webkit-backdrop-filter:
-        blur(11px);
-
-      backdrop-filter:
-        blur(11px);
-
-      z-index: 10;
-    }
-
-
-
-    /* ==================================================
-       AZULEJO
-    ================================================== */
-
-    .azulejo {
-
-      width: 44px;
-      height: 60px;
-
-      object-fit: contain;
-
-      margin-bottom: 9px;
-    }
-
-
-
-    /* ==================================================
-       EXPERIÊNCIA
-    ================================================== */
-
-    .experience-panel span {
-
-      font-size: 10px;
-
-      font-weight: 400;
-
-      letter-spacing: 0.18em;
-
-      text-transform: lowercase;
-    }
-
-
-
-    /* ==================================================
-       SETA
-    ================================================== */
-
-    .arrow {
-
-      margin-top: 11px;
-
-      font-size: 22px;
-
-      line-height: 1;
-
-      font-weight: 300;
-    }
-
-
-
-    /* ==================================================
-       TODA A PARTE DE BAIXO
-       É UMA TRANSPARÊNCIA CONTÍNUA
-    ================================================== */
-
-    .glass-site {
-
+    .projects-section {
       position: relative;
 
       width: 100%;
-
       min-height: 100vh;
 
-      background:
-        rgba(220, 210, 195, 0.26);
-
-      -webkit-backdrop-filter:
-        blur(11px);
-
-      backdrop-filter:
-        blur(11px);
-
-      z-index: 5;
-
-      padding-top: 28px;
-    }
-
-
-
-    /* ==================================================
-       PROJETOS
-    ================================================== */
-
-    .projects {
-
-      width: 100%;
-
       padding:
+        26px
+        clamp(42px, 6vw, 100px)
+        90px;
 
-        0
-        4.5vw
-        70px;
+      overflow: hidden;
     }
-
-
-
-    /* ==================================================
-       GRID
-    ================================================== */
 
     .projects-grid {
-
-      width: 100%;
+      position: relative;
+      z-index: 2;
 
       display: grid;
+      grid-template-columns: repeat(4, 1fr);
 
-      grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-      gap: 14px;
+      gap: 16px;
     }
 
 
-
-    /* ==================================================
+    /* =========================================================
        CARD
-    ================================================== */
+    ========================================================= */
 
     .project {
-
       position: relative;
 
       width: 100%;
-
-      aspect-ratio:
-        1.45 / 1;
+      aspect-ratio: 1.45 / 1;
 
       overflow: hidden;
 
-      background:
-        rgba(20,20,20,0.85);
+      background: rgba(0, 0, 0, 0.15);
+
+      cursor: pointer;
+
+      opacity: 0;
+      transform: translateY(45px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
     }
 
+    .project.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-
-    /* ==================================================
-       IMAGEM
-    ================================================== */
-
-    .project > img {
-
+    .project img {
       width: 100%;
       height: 100%;
 
       object-fit: cover;
 
-      transition:
-        transform 0.55s
-        cubic-bezier(.22,.61,.36,1);
+      transition: transform 0.6s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.025);
     }
 
 
-
-    /* ==================================================
-       HOVER
-    ================================================== */
+    /* =========================================================
+       OVERLAY DOS PROJETOS
+    ========================================================= */
 
     .project-overlay {
-
       position: absolute;
-
       inset: 0;
 
       display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
 
-      align-items: center;
+      padding: 18px;
 
-      justify-content: center;
+      background: rgba(225, 214, 195, 0.25);
 
-      padding: 20px;
-
-      background:
-        rgba(225,215,200,0);
-
-      -webkit-backdrop-filter:
-        blur(0);
-
-      backdrop-filter:
-        blur(0);
+      -webkit-backdrop-filter: blur(13px);
+      backdrop-filter: blur(13px);
 
       opacity: 0;
 
-      transition:
-        opacity 0.35s ease,
-        background 0.35s ease,
-        backdrop-filter 0.35s ease;
+      transition: opacity 0.35s ease;
+    }
+
+    .project:hover .project-overlay {
+      opacity: 1;
     }
 
     .project-name {
-
-      font-size:
-        clamp(16px, 1.5vw, 25px);
-
-      font-weight: 400;
-
-      line-height: 1.05;
-
-      letter-spacing: -0.03em;
-
-      text-align: center;
-
       color: white;
 
-      opacity: 0;
-
-      transform:
-        translateY(8px);
-
-      transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
-    }
-
-
-
-    .project:hover > img {
-
-      transform:
-        scale(1.025);
-    }
-
-    .project:hover
-    .project-overlay {
-
-      opacity: 1;
-
-      background:
-        rgba(120,110,95,0.40);
-
-      -webkit-backdrop-filter:
-        blur(6px);
-
-      backdrop-filter:
-        blur(6px);
-    }
-
-    .project:hover
-    .project-name {
-
-      opacity: 1;
-
-      transform:
-        translateY(0);
-    }
-
-
-
-    /* ==================================================
-       SOBRE
-    ================================================== */
-
-    .about {
-
-      min-height: 85vh;
-
-      padding:
-        120px 5vw;
-
-      display: flex;
-
-      align-items: center;
-    }
-
-    .about-inner {
-
-      max-width: 850px;
-    }
-
-    .about h2 {
-
-      margin-bottom: 45px;
-
-      font-size:
-        clamp(52px, 8vw, 120px);
-
+      font-size: 18px;
       font-weight: 400;
-
-      letter-spacing: -0.06em;
-
-      line-height: 0.9;
-
-      text-transform: lowercase;
-    }
-
-    .about p {
-
-      font-size:
-        clamp(20px, 2vw, 32px);
-
-      line-height: 1.3;
 
       letter-spacing: -0.02em;
-
-      font-weight: 400;
     }
 
 
-
-    /* ==================================================
+    /* =========================================================
        CONTATO
-    ================================================== */
+    ========================================================= */
 
     .contact {
+      position: relative;
 
-      min-height: 80vh;
-
-      padding:
-        120px 5vw 70px;
+      min-height: 72vh;
 
       display: flex;
-
       flex-direction: column;
+      justify-content: center;
 
-      justify-content: space-between;
+      padding:
+        90px
+        clamp(42px, 8vw, 130px);
+
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: rgba(225, 214, 195, 0.25);
+
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+
+      z-index: 0;
+    }
+
+    .contact-inner {
+      position: relative;
+      z-index: 2;
+
+      opacity: 0;
+      transform: translateY(40px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .contact-inner.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .contact h2 {
-
-      font-size:
-        clamp(52px, 8vw, 120px);
+      font-size: clamp(32px, 4vw, 56px);
 
       font-weight: 400;
-
-      letter-spacing: -0.06em;
-
-      line-height: 0.9;
+      letter-spacing: -0.05em;
 
       text-transform: lowercase;
+
+      margin-bottom: 30px;
     }
 
     .contact-links {
-
-      margin-top: 80px;
-
       display: flex;
-
       flex-direction: column;
 
-      gap: 8px;
+      gap: 12px;
     }
 
-    .contact-links a {
-
+    .contact-link {
       width: fit-content;
 
-      font-size:
-        clamp(22px, 3vw, 42px);
+      display: flex;
+      align-items: center;
 
-      letter-spacing:
-        -0.03em;
+      gap: 12px;
 
-      transition:
-        opacity 0.2s ease;
+      font-size: 15px;
+      font-weight: 400;
+
+      transition: opacity 0.25s ease;
     }
 
-    .contact-links a:hover {
-      opacity: 0.5;
+    .contact-link:hover {
+      opacity: 0.55;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-icon svg {
+      width: 100%;
+      height: 100%;
+
+      fill: none;
+      stroke: currentColor;
+
+      stroke-width: 1.6;
     }
 
 
-
-    /* ==================================================
+    /* =========================================================
        MOBILE
-    ================================================== */
+    ========================================================= */
 
-    @media
-    (max-width: 768px) {
-
+    @media (max-width: 700px) {
 
       /*
-       FUNDO GIRADO 90°
+        No celular a home + experiência formam
+        exatamente a primeira tela.
+
+        Assim NÃO aparece nenhuma ponta dos projetos
+        antes de começar o scroll.
       */
 
-      .background {
+      .home {
+        height: calc(100svh - 255px);
+        min-height: calc(100svh - 255px);
+      }
 
-        width: 100dvh;
 
-        height: 100vw;
+      /* FUNDO GIRADO 90° NO MOBILE */
+
+      .fixed-background {
+        inset: auto;
 
         top: 50%;
         left: 50%;
 
-        transform:
-          translate(-50%, -50%)
-          rotate(90deg);
+        width: 100vh;
+        height: 100vw;
+
+        transform: translate(-50%, -50%) rotate(90deg);
 
         background-size: cover;
-
         background-position: center;
       }
-
-
-
-      /*
-       HOME OCUPA 100% DA TELA
-
-       Assim nenhum pedaço dos projetos
-       aparece antes do scroll.
-      */
-
-      .hero {
-
-        width: 100%;
-
-        height: 100dvh;
-
-        min-height: 100dvh;
-      }
-
 
 
       /* MENU */
 
       .menu {
+        top: 40px;
+        left: 32px;
 
-        top: 27px;
-
-        left: 33px;
-
-        gap: 45px;
+        gap: 36px;
       }
 
       .menu a {
-
-        font-size: 11px;
+        font-size: 14px;
       }
-
 
 
       /* NOME */
 
-      .identity {
+      .intro {
+        padding: 0 22px;
 
-        top: 48%;
-
-        left: 50%;
-
-        width: 100%;
-
-        padding:
-          0 20px;
-
-        transform:
-          translate(-50%, -50%);
-
-        text-align: center;
+        transform: translateY(15px);
       }
 
-      .identity h1 {
-
+      .intro h1 {
         width: 100%;
 
-        font-size:
-          clamp(30px, 8.8vw, 47px);
+        font-size: clamp(35px, 9.5vw, 52px);
 
         line-height: 1;
 
-        letter-spacing:
-          -0.055em;
-
-        text-align: center;
+        letter-spacing: -0.055em;
 
         white-space: nowrap;
-      }
-
-      .identity p {
-
-        width: 100%;
-
-        margin-top: 15px;
-
-        padding: 0 6px;
-
-        font-size: 8px;
-
-        letter-spacing:
-          0.15em;
 
         text-align: center;
+      }
 
-        white-space: normal;
+      .intro p {
+        margin-top: 18px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.17em;
+
+        text-align: center;
       }
 
 
+      /* EXPERIÊNCIA */
 
-      /* TRANSPARÊNCIA */
-
-      .experience-panel {
-
-        height: 175px;
+      .experience {
+        min-height: 255px;
+        height: 255px;
       }
 
-      .azulejo {
-
-        width: 40px;
-
-        height: 58px;
-
-        margin-bottom: 8px;
+      .tile-symbol {
+        width: 78px;
       }
 
-      .experience-panel span {
+      .experience-title {
+        margin-top: 16px;
+
+        font-size: 14px;
+
+        letter-spacing: 0.25em;
+      }
+
+      .drag-down {
+        left: 18px;
+        bottom: 28px;
 
         font-size: 9px;
-
-        letter-spacing:
-          0.18em;
-      }
-
-      .arrow {
-
-        margin-top: 13px;
-
-        font-size: 22px;
       }
 
 
+      /* PROJETOS */
 
-      /*
-       TRANSPARÊNCIA CONTINUA
-      */
-
-      .glass-site {
-
-        padding-top: 20px;
-      }
-
-
-
-      /*
-       PROJETOS
-       MAIS RESPIRO NAS LATERAIS
-      */
-
-      .projects {
+      .projects-section {
+        min-height: 100vh;
 
         padding:
-
-          0
-          18px
-          55px;
+          24px
+          22px
+          70px;
       }
 
       .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
 
-        grid-template-columns:
-          repeat(2, minmax(0,1fr));
-
-        gap: 9px;
+        gap: 10px;
       }
 
       .project {
-
-        aspect-ratio:
-          1.15 / 1;
+        aspect-ratio: 0.95 / 1;
       }
 
 
-
       /*
-       MOBILE NÃO TEM HOVER
+        No celular não existe hover de verdade.
+        O nome aparece discretamente sobre a foto.
       */
 
       .project-overlay {
+        opacity: 1;
 
-        display: none;
+        align-items: flex-end;
+
+        padding: 12px;
+
+        background:
+          linear-gradient(
+            to top,
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0) 55%
+          );
+
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+
+      .project-name {
+        font-size: 13px;
       }
 
 
+      /* CONTATO */
 
-      /*
-       SOBRE E CONTATO
-      */
-
-      .about,
       .contact {
+        min-height: 62vh;
 
-        padding-left: 25px;
-
-        padding-right: 25px;
+        padding: 70px 32px;
       }
 
+      .contact h2 {
+        font-size: 30px;
+
+        margin-bottom: 22px;
+      }
+
+      .contact-links {
+        gap: 10px;
+      }
+
+      .contact-link {
+        font-size: 14px;
+      }
+
+      .contact-icon {
+        width: 18px;
+        height: 18px;
+      }
     }
 
 
+    /* =========================================================
+       MOBILE MUITO PEQUENO
+    ========================================================= */
 
-    /* ==================================================
-       CELULARES MENORES
-    ================================================== */
+    @media (max-width: 390px) {
 
-    @media
-    (max-width: 390px) {
-
-      .identity h1 {
-
-        font-size: 29px;
+      .intro h1 {
+        font-size: 8.7vw;
       }
 
-      .identity p {
-
-        font-size: 7.5px;
-
-        letter-spacing:
-          0.12em;
+      .intro p {
+        font-size: 8.5px;
       }
 
-      .projects {
-
-        padding-left: 15px;
-
-        padding-right: 15px;
+      .projects-section {
+        padding-left: 18px;
+        padding-right: 18px;
       }
-
-      .projects-grid {
-
-        gap: 8px;
-      }
-
     }
-
 
   </style>
-
 </head>
 
 
 <body>
 
 
+  <!-- =======================================================
+       FUNDO
+  ======================================================== -->
 
-  <!-- FUNDO FIXO -->
-
-  <div class="background"></div>
+  <div class="fixed-background"></div>
 
 
 
-  <!-- ==================================================
+  <!-- =======================================================
        HOME
-  ================================================== -->
+  ======================================================== -->
 
-  <section
-    class="hero"
-    id="home"
-  >
-
+  <section class="home">
 
     <nav class="menu">
 
-      <a href="#sobre">
+      <!-- abre página separada -->
+      <a href="sobre.html">
         sobre mim
       </a>
 
@@ -900,12 +692,9 @@
     </nav>
 
 
+    <div class="intro">
 
-    <div class="identity">
-
-      <h1>
-        ANA LUIZA CAMPOS
-      </h1>
+      <h1>ANA LUIZA CAMPOS</h1>
 
       <p>
         estudante de arquitetura e urbanismo
@@ -913,233 +702,255 @@
 
     </div>
 
+  </section>
 
 
-    <a
-      href="#experiencia"
-      class="experience-panel"
-    >
+
+  <!-- =======================================================
+       EXPERIÊNCIA
+  ======================================================== -->
+
+  <section class="experience">
+
+    <div class="experience-content">
 
       <img
         src="azulejo.PNG"
-        class="azulejo"
         alt=""
+        class="tile-symbol"
       >
 
-      <span>
+      <div class="experience-title">
         experiência
-      </span>
-
-      <div class="arrow">
-        ↓
       </div>
 
-    </a>
+    </div>
 
+
+    <div class="drag-down">
+      arraste para baixo
+    </div>
 
   </section>
 
 
 
-  <!-- ==================================================
-       TRANSPARÊNCIA CONTÍNUA
-  ================================================== -->
+  <!-- =======================================================
+       PROJETOS
+  ======================================================== -->
 
-  <div class="glass-site">
+  <section class="projects-section">
 
-
-
-    <!-- PROJETOS -->
-
-    <main
-      class="projects"
-      id="experiencia"
-    >
-
-      <div class="projects-grid">
+    <div class="projects-grid">
 
 
+      <!-- 01 — 303 -->
 
-        <!-- 303 -->
+      <a
+        href="303.html"
+        class="project reveal"
+      >
 
-        <a
-          href="303.html"
-          class="project"
+        <img
+          src="render4.JPG"
+          alt="Projeto 303"
         >
 
-          <img
-            src="303.jpg"
-            alt="Projeto 303"
-          >
+        <div class="project-overlay">
 
-          <div class="project-overlay">
-
-            <div class="project-name">
-              303
-            </div>
-
+          <div class="project-name">
+            303
           </div>
 
-        </a>
+        </div>
+
+      </a>
 
 
 
-        <!-- CONJUNTO -->
+      <!-- 02 — CONJUNTO EM DESNÍVEL -->
 
-        <a
-          href="conjunto-em-desnivel.html"
-          class="project"
+      <a
+        href="conjunto-em-desnivel.html"
+        class="project reveal"
+      >
+
+        <img
+          src="foto 4 salvador.jpeg"
+          alt="Conjunto em desnível"
         >
 
-          <img
-            src="conjunto.jpg"
-            alt="Conjunto em desnível"
-          >
+        <div class="project-overlay">
 
-          <div class="project-overlay">
-
-            <div class="project-name">
-              Conjunto em desnível
-            </div>
-
+          <div class="project-name">
+            Conjunto em desnível
           </div>
 
-        </a>
+        </div>
+
+      </a>
 
 
 
-        <!-- OFICINA -->
+      <!-- 03 — OFICINA BISTROL -->
 
-        <a
-          href="oficina-bistrol.html"
-          class="project"
+      <a
+        href="oficina-bistrol.html"
+        class="project reveal"
+      >
+
+        <img
+          src="ev 3.jpg"
+          alt="Oficina Bistrol"
         >
 
-          <img
-            src="oficina.jpg"
-            alt="Oficina Bistrol"
-          >
+        <div class="project-overlay">
 
-          <div class="project-overlay">
-
-            <div class="project-name">
-              Oficina Bistrol
-            </div>
-
+          <div class="project-name">
+            Oficina Bistrol
           </div>
 
-        </a>
+        </div>
+
+      </a>
 
 
 
-        <!-- CAMINHOS -->
+      <!-- 04 — CAMINHOS SOBRE A ÁGUA -->
 
-        <a
-          href="caminhos-sobre-a-agua.html"
-          class="project"
+      <a
+        href="caminhos-sobre-a-agua.html"
+        class="project reveal"
+      >
+
+        <img
+          src="foto 1.jpg"
+          alt="Caminhos sobre a água"
         >
 
-          <img
-            src="caminhos.jpg"
-            alt="Caminhos sobre a água"
-          >
+        <div class="project-overlay">
 
-          <div class="project-overlay">
-
-            <div class="project-name">
-              Caminhos sobre a água
-            </div>
-
+          <div class="project-name">
+            Caminhos sobre a água
           </div>
 
-        </a>
+        </div>
+
+      </a>
 
 
 
-        <!-- CAMPOS ELÍSEOS -->
+      <!-- 05 — HABITAR CAMPOS ELÍSEOS -->
 
-        <a
-          href="habitar-campos-eliseos.html"
-          class="project"
+      <a
+        href="habitar-campos-eliseos.html"
+        class="project reveal"
+      >
+
+        <img
+          src="maquete conjunto hab .PNG"
+          alt="Habitar Campos Elíseos"
         >
 
-          <img
-            src="campos-eliseos.jpg"
-            alt="Habitar Campos Elíseos"
-          >
+        <div class="project-overlay">
 
-          <div class="project-overlay">
-
-            <div class="project-name">
-              Habitar Campos Elíseos
-            </div>
-
+          <div class="project-name">
+            Habitar Campos Elíseos
           </div>
 
-        </a>
+        </div>
+
+      </a>
 
 
 
-        <!-- TUDO SOBRE O AMOR -->
+      <!-- 06 — TUDO SOBRE O AMOR -->
 
-        <a
-          href="tudo-sobre-o-amor.html"
-          class="project"
+      <a
+        href="tudo-sobre-o-amor.html"
+        class="project reveal"
+      >
+
+        <img
+          src="Tudo sobre o amor .PNG"
+          alt="Tudo sobre o amor"
         >
 
-          <img
-            src="tudo-sobre-o-amor.jpg"
-            alt="Tudo sobre o amor"
-          >
+        <div class="project-overlay">
 
-          <div class="project-overlay">
-
-            <div class="project-name">
-              Tudo sobre o amor
-            </div>
-
+          <div class="project-name">
+            Tudo sobre o amor
           </div>
 
-        </a>
+        </div>
 
-
-      </div>
-
-    </main>
+      </a>
 
 
 
-    <!-- SOBRE -->
+      <!-- 07 — ACMR -->
 
-    <section
-      class="about"
-      id="sobre"
-    >
+      <a
+        href="acmr.html"
+        class="project reveal"
+      >
 
-      <div class="about-inner">
+        <img
+          src="IMG_1051.JPG"
+          alt="ACMR"
+        >
 
-        <h2>
-          sobre mim
-        </h2>
+        <div class="project-overlay">
 
-        <p>
-          Sou estudante de arquitetura e urbanismo.
-          Meu trabalho transita entre arquitetura,
-          imagem, comunicação e criação.
-        </p>
+          <div class="project-name">
+            ACMR
+          </div>
 
-      </div>
+        </div>
 
-    </section>
-
+      </a>
 
 
-    <!-- CONTATO -->
 
-    <section
-      class="contact"
-      id="contato"
-    >
+      <!-- 08 — TERESA BARRA -->
+
+      <a
+        href="teresa-barra.html"
+        class="project reveal"
+      >
+
+        <img
+          src="Joao6.PNG"
+          alt="Teresa Barra"
+        >
+
+        <div class="project-overlay">
+
+          <div class="project-name">
+            Teresa Barra
+          </div>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       CONTATO
+  ======================================================== -->
+
+  <section
+    class="contact"
+    id="contato"
+  >
+
+    <div class="contact-inner reveal-contact">
 
       <h2>
         contato
@@ -1148,34 +959,209 @@
 
       <div class="contact-links">
 
+
+        <!-- EMAIL -->
+
         <a
-          href="mailto:seuemail@email.com"
+          href="mailto:SEUEMAIL@EMAIL.COM"
+          class="contact-link"
         >
-          email
+
+          <span class="contact-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="3"
+                y="5"
+                width="18"
+                height="14"
+                rx="1"
+              />
+
+              <path d="M3 7l9 7 9-7" />
+
+            </svg>
+
+          </span>
+
+          <span>
+            email
+          </span>
+
         </a>
+
+
+
+        <!-- LINKEDIN -->
 
         <a
           href="#"
           target="_blank"
+          rel="noopener"
+          class="contact-link"
         >
-          instagram
+
+          <span class="contact-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="2"
+              />
+
+              <path d="M8 10v7" />
+
+              <path d="M8 7v.01" />
+
+              <path d="M12 17v-4a3 3 0 0 1 6 0v4" />
+
+              <path d="M12 10v7" />
+
+            </svg>
+
+          </span>
+
+          <span>
+            linkedin
+          </span>
+
         </a>
 
+
+
+        <!-- TELEFONE -->
+
         <a
-          href="#"
-          target="_blank"
+          href="tel:+5500000000000"
+          class="contact-link"
         >
-          linkedin
+
+          <span class="contact-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                d="
+                  M6 3
+                  h3
+                  l1.5 4
+                  -2 1.5
+                  a15 15 0 0 0 7 7
+                  l1.5 -2
+                  4 1.5
+                  v3
+                  a2 2 0 0 1 -2 2
+                  C10 20 4 14 4 5
+                  a2 2 0 0 1 2 -2
+                "
+              />
+
+            </svg>
+
+          </span>
+
+          <span>
+            telefone
+          </span>
+
         </a>
+
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-  </div>
+
+  <!-- =======================================================
+       REVEAL NO SCROLL
+  ======================================================== -->
+
+  <script>
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        (entries, observer) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.14
+        }
+
+      );
+
+
+    revealElements.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+
+    /* CONTATO */
+
+    const contactElement =
+      document.querySelector(".reveal-contact");
+
+
+    const contactObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.18
+        }
+
+      );
+
+
+    if (contactElement) {
+
+      contactObserver.observe(contactElement);
+
+    }
+
+  </script>
 
 
 </body>
-
 </html>
