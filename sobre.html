@@ -12,6 +12,7 @@
 
   <title>Sobre mim — Ana Luiza Campos</title>
 
+
   <style>
 
     /* =====================================================
@@ -30,8 +31,11 @@
 
     body {
       font-family: Helvetica, Arial, sans-serif;
+
       color: #fff;
+
       background: #000;
+
       overflow-x: hidden;
     }
 
@@ -51,13 +55,17 @@
 
     .fixed-background {
       position: fixed;
+
       inset: 0;
 
       z-index: -10;
 
       background-image: url("fundo.jpg");
+
       background-size: cover;
+
       background-position: center;
+
       background-repeat: no-repeat;
     }
 
@@ -68,12 +76,17 @@
 
     .glass-page {
       width: 100%;
+
       min-height: 100vh;
 
-      background: rgba(230, 215, 195, .30);
+      background:
+        rgba(230, 215, 195, .30);
 
-      -webkit-backdrop-filter: blur(16px);
-      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter:
+        blur(16px);
+
+      backdrop-filter:
+        blur(16px);
     }
 
 
@@ -85,27 +98,61 @@
       width: 100%;
 
       padding:
-        32px
+        30px
         clamp(34px, 5vw, 80px);
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
     }
 
-    .back-link,
-    .top-name {
-      font-size: 12px;
-      font-weight: 400;
-      text-transform: lowercase;
-    }
+
+    /* VOLTAR */
 
     .back-link {
-      transition: opacity .25s ease;
+      font-size: 12px;
+
+      font-weight: 400;
+
+      text-transform: lowercase;
+
+      transition:
+        opacity .25s ease;
     }
 
     .back-link:hover {
       opacity: .55;
+    }
+
+
+    /* =====================================================
+       IDENTIDADE DO TOPO
+    ===================================================== */
+
+    .top-identity {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .top-tile {
+      width: 28px;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+    .top-name {
+      font-size: 12px;
+
+      font-weight: 400;
+
+      text-transform: none;
     }
 
 
@@ -117,7 +164,7 @@
       width: 100%;
 
       padding:
-        50px
+        55px
         clamp(42px, 7vw, 120px)
         95px;
     }
@@ -129,7 +176,9 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(34px);
+
+      transform:
+        translateY(32px);
 
       transition:
         opacity .8s ease,
@@ -138,7 +187,9 @@
 
     .reveal.visible {
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
     }
 
 
@@ -147,15 +198,18 @@
     ===================================================== */
 
     .section-title {
-      font-size: clamp(20px, 2vw, 30px);
+      font-size:
+        clamp(20px, 2vw, 29px);
 
       font-weight: 400;
 
-      letter-spacing: -.03em;
+      letter-spacing:
+        -.03em;
 
-      text-transform: lowercase;
+      text-transform:
+        lowercase;
 
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
 
@@ -166,32 +220,47 @@
     .profile {
       display: grid;
 
+      /*
+        Foto menor no desktop.
+      */
+
       grid-template-columns:
-        240px
+        185px
         minmax(0, 1fr);
 
       gap:
-        clamp(45px, 6vw, 90px);
+        clamp(55px, 7vw, 115px);
 
-      align-items: center;
+      /*
+        Faz o texto terminar exatamente
+        alinhado com a base da foto.
+      */
+
+      align-items: end;
 
       padding-bottom: 95px;
     }
 
 
-    /* FOTO MENOR */
+    /* =====================================================
+       FOTO
+    ===================================================== */
 
     .profile-photo {
-      width: 220px;
-      aspect-ratio: 3 / 4;
+      width: 185px;
+
+      aspect-ratio:
+        3 / 4;
 
       overflow: hidden;
 
-      background: rgba(255,255,255,.08);
+      background:
+        rgba(255,255,255,.08);
     }
 
     .profile-photo img {
       width: 100%;
+
       height: 100%;
 
       display: block;
@@ -202,20 +271,34 @@
     }
 
 
-    /* TEXTO */
+    /* =====================================================
+       TEXTO SOBRE MIM
+    ===================================================== */
 
     .profile-text {
-      max-width: 780px;
+      width: 100%;
+
+      max-width: 820px;
     }
 
     .profile-text p {
-      font-size: clamp(17px, 1.8vw, 26px);
+      font-size:
+        clamp(16px, 1.55vw, 23px);
 
-      line-height: 1.32;
+      line-height: 1.38;
 
-      letter-spacing: -.02em;
+      letter-spacing:
+        -.015em;
 
       font-weight: 400;
+
+      /*
+        TEXTO JUSTIFICADO
+      */
+
+      text-align: justify;
+
+      text-justify: inter-word;
     }
 
 
@@ -225,7 +308,7 @@
 
     .section {
       padding:
-        68px
+        65px
         0;
 
       border-top:
@@ -235,23 +318,25 @@
 
 
     /* =====================================================
-       ÁREA
+       SUBTÍTULOS
     ===================================================== */
 
     .area-title {
-      margin-bottom: 34px;
+      margin-bottom: 32px;
 
       font-size: 12px;
 
-      letter-spacing: .14em;
+      letter-spacing:
+        .14em;
 
-      text-transform: lowercase;
+      text-transform:
+        lowercase;
 
       opacity: .72;
     }
 
     .area-title.social {
-      margin-top: 72px;
+      margin-top: 70px;
     }
 
 
@@ -264,51 +349,67 @@
 
       flex-direction: column;
 
-      gap: 50px;
+      gap: 48px;
     }
 
     .experience-item {
       display: grid;
 
       grid-template-columns:
-        minmax(170px, 220px)
+        minmax(170px, 215px)
         minmax(0, 1fr);
 
       gap:
         clamp(30px, 5vw, 70px);
     }
 
+
+    /* DATA */
+
     .experience-date {
       font-size: 12px;
 
       line-height: 1.5;
 
-      letter-spacing: .04em;
+      letter-spacing:
+        .04em;
 
-      opacity: .7;
+      opacity: .70;
     }
 
+
+    /* EMPRESA */
+
     .experience-info h3 {
-      font-size: clamp(18px, 1.6vw, 23px);
+      font-size:
+        clamp(17px, 1.55vw, 22px);
 
       font-weight: 400;
 
       line-height: 1.15;
 
-      letter-spacing: -.02em;
+      letter-spacing:
+        -.02em;
 
       margin-bottom: 7px;
     }
 
+
+    /* CARGO */
+
     .experience-role {
       font-size: 12px;
 
-      letter-spacing: .04em;
+      letter-spacing:
+        .04em;
 
       margin-bottom: 17px;
 
       opacity: .72;
     }
+
+
+    /* DESCRIÇÃO */
 
     .experience-description {
       list-style: none;
@@ -338,6 +439,7 @@
       position: absolute;
 
       left: 0;
+
       top: 0;
     }
 
@@ -358,7 +460,7 @@
       display: grid;
 
       grid-template-columns:
-        minmax(170px, 220px)
+        minmax(170px, 215px)
         minmax(0, 1fr);
 
       gap:
@@ -368,17 +470,20 @@
     .education-date {
       font-size: 12px;
 
-      letter-spacing: .04em;
+      letter-spacing:
+        .04em;
 
-      opacity: .7;
+      opacity: .70;
     }
 
     .education-info h3 {
-      font-size: clamp(18px, 1.6vw, 23px);
+      font-size:
+        clamp(17px, 1.55vw, 22px);
 
       font-weight: 400;
 
-      letter-spacing: -.02em;
+      letter-spacing:
+        -.02em;
 
       margin-bottom: 7px;
     }
@@ -409,21 +514,28 @@
     .skills-block h3 {
       margin-bottom: 24px;
 
-      font-size: clamp(20px, 2vw, 30px);
+      font-size:
+        clamp(20px, 2vw, 29px);
 
       font-weight: 400;
 
-      letter-spacing: -.03em;
+      letter-spacing:
+        -.03em;
 
-      text-transform: lowercase;
+      text-transform:
+        lowercase;
     }
+
+
+    /* LINHAS */
 
     .skill-row {
       display: flex;
 
       align-items: baseline;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
       gap: 30px;
 
@@ -443,9 +555,11 @@
     .skill-level {
       font-size: 11px;
 
-      letter-spacing: .05em;
+      letter-spacing:
+        .05em;
 
-      text-transform: lowercase;
+      text-transform:
+        lowercase;
 
       opacity: .65;
 
@@ -460,7 +574,8 @@
     .footer {
       display: flex;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
       align-items: center;
 
@@ -474,13 +589,15 @@
 
       font-size: 9px;
 
-      letter-spacing: .08em;
+      letter-spacing:
+        .08em;
 
       opacity: .7;
     }
 
     .footer a {
-      transition: opacity .25s ease;
+      transition:
+        opacity .25s ease;
     }
 
     .footer a:hover {
@@ -494,7 +611,10 @@
 
     @media (max-width: 700px) {
 
-      /* FUNDO */
+
+      /* =================================================
+         FUNDO GIRADO
+      ================================================= */
 
       .fixed-background {
         inset: auto;
@@ -510,71 +630,109 @@
           rotate(90deg);
 
         background-size: cover;
+
         background-position: center;
       }
 
 
-      /* TOPO */
+      /* =================================================
+         TOPO
+      ================================================= */
 
       .top-bar {
         padding:
-          26px
+          25px
           22px;
       }
 
-      .back-link,
-      .top-name {
+      .back-link {
         font-size: 10px;
       }
 
 
-      /* CONTEÚDO */
+      /* IDENTIDADE */
+
+      .top-identity {
+        gap: 6px;
+      }
+
+      .top-tile {
+        width: 20px;
+      }
+
+      .top-name {
+        font-size: 10px;
+
+        text-transform: none;
+      }
+
+
+      /* =================================================
+         CONTEÚDO
+      ================================================= */
 
       .about-content {
         padding:
-          38px
+          35px
           22px
-          65px;
+          62px;
       }
 
 
       /* =================================================
          SOBRE MIM
-         MESMA ORDEM DO DESKTOP:
-         FOTO → TÍTULO → TEXTO
       ================================================= */
 
       .profile {
         display: block;
 
-        padding-bottom: 65px;
+        padding-bottom: 62px;
       }
+
+
+      /* FOTO BEM MENOR */
 
       .profile-photo {
-        width: 42vw;
-        max-width: 180px;
+        width: 31vw;
 
-        aspect-ratio: 3 / 4;
+        max-width: 125px;
 
-        margin-bottom: 30px;
+        min-width: 105px;
+
+        aspect-ratio:
+          3 / 4;
+
+        margin-bottom: 27px;
       }
+
+
+      /* TEXTO */
 
       .profile-text {
         max-width: 100%;
       }
 
       .section-title {
-        font-size: 21px;
+        font-size: 20px;
 
-        margin-bottom: 18px;
+        margin-bottom: 17px;
       }
 
       .profile-text p {
-        font-size: 14px;
+        font-size: 13px;
 
-        line-height: 1.45;
+        line-height: 1.48;
 
         letter-spacing: 0;
+
+        /*
+          mantém justificado também
+          no celular
+        */
+
+        text-align: justify;
+
+        text-justify: inter-word;
       }
 
 
@@ -584,60 +742,66 @@
 
       .section {
         padding:
-          48px
+          46px
           0;
       }
 
       .area-title {
-        margin-bottom: 25px;
+        margin-bottom: 24px;
 
         font-size: 10px;
       }
 
       .area-title.social {
-        margin-top: 58px;
+        margin-top: 55px;
       }
 
 
       /* =================================================
          EXPERIÊNCIA
-         MESMA HIERARQUIA DO DESKTOP
+
+         MESMA ESTRUTURA DO DESKTOP:
+         DATA | CONTEÚDO
       ================================================= */
 
       .experience-list {
-        gap: 40px;
+        gap: 38px;
       }
 
       .experience-item {
         display: grid;
 
         grid-template-columns:
-          92px
+          82px
           minmax(0,1fr);
 
-        gap: 16px;
+        gap: 15px;
+
+        align-items: start;
       }
 
       .experience-date {
-        font-size: 8.5px;
+        font-size: 8px;
 
         line-height: 1.45;
 
-        letter-spacing: .02em;
+        letter-spacing: .01em;
       }
 
       .experience-info h3 {
-        font-size: 14px;
+        font-size: 13px;
+
+        line-height: 1.2;
 
         margin-bottom: 5px;
       }
 
       .experience-role {
-        font-size: 9px;
+        font-size: 8.5px;
 
         line-height: 1.35;
 
-        margin-bottom: 12px;
+        margin-bottom: 11px;
       }
 
       .experience-description {
@@ -645,11 +809,11 @@
       }
 
       .experience-description li {
-        font-size: 10.5px;
+        font-size: 9.8px;
 
-        line-height: 1.42;
+        line-height: 1.45;
 
-        padding-left: 11px;
+        padding-left: 10px;
       }
 
 
@@ -658,48 +822,55 @@
       ================================================= */
 
       .education-list {
-        gap: 32px;
+        gap: 31px;
       }
 
       .education-item {
         display: grid;
 
         grid-template-columns:
-          92px
+          82px
           minmax(0,1fr);
 
-        gap: 16px;
+        gap: 15px;
+
+        align-items: start;
       }
 
       .education-date {
-        font-size: 8.5px;
+        font-size: 8px;
+
+        line-height: 1.45;
       }
 
       .education-info h3 {
-        font-size: 14px;
+        font-size: 13px;
+
+        line-height: 1.25;
 
         margin-bottom: 5px;
       }
 
       .education-info p {
-        font-size: 10.5px;
+        font-size: 9.8px;
       }
 
 
       /* =================================================
-         FERRAMENTAS / IDIOMAS
+         FERRAMENTAS + IDIOMAS
       ================================================= */
 
       .skills-columns {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
 
-        gap: 52px;
+        gap: 50px;
       }
 
       .skills-block h3 {
-        font-size: 21px;
+        font-size: 20px;
 
-        margin-bottom: 18px;
+        margin-bottom: 17px;
       }
 
       .skill-row {
@@ -709,11 +880,11 @@
       }
 
       .skill-name {
-        font-size: 11.5px;
+        font-size: 11px;
       }
 
       .skill-level {
-        font-size: 9px;
+        font-size: 8.5px;
       }
 
 
@@ -723,6 +894,7 @@
 
       .footer {
         padding:
+          21px
           22px;
 
         font-size: 8px;
@@ -732,26 +904,28 @@
 
 
     /* =====================================================
-       MOBILE MUITO PEQUENO
+       CELULARES MUITO ESTREITOS
     ===================================================== */
 
     @media (max-width: 390px) {
 
       .profile-photo {
-        width: 46vw;
+        width: 30vw;
+
+        max-width: 115px;
       }
 
       .experience-item,
       .education-item {
         grid-template-columns:
-          82px
+          75px
           minmax(0,1fr);
 
-        gap: 13px;
+        gap: 12px;
       }
 
       .experience-description li {
-        font-size: 10px;
+        font-size: 9.3px;
       }
 
     }
@@ -791,9 +965,20 @@
         ← voltar
       </a>
 
-      <span class="top-name">
-        ana luiza campos
-      </span>
+
+      <div class="top-identity">
+
+        <img
+          src="azulejo.PNG"
+          alt=""
+          class="top-tile"
+        >
+
+        <span class="top-name">
+          Ana Luiza Campos
+        </span>
+
+      </div>
 
     </header>
 
@@ -814,9 +999,24 @@
 
         <div class="profile-photo">
 
+          <!--
+            ?v=4 força navegador/GitHub a buscar
+            a versão atual da imagem e evita
+            aquele quadrado vazio do cache.
+          -->
+
           <img
-            src="./eu.jpg"
+            src="eu.jpg?v=4"
             alt="Ana Luiza Campos"
+            onerror="
+              if (!this.dataset.fallback) {
+                this.dataset.fallback='1';
+                this.src='eu.JPG?v=4';
+              } else if (this.dataset.fallback === '1') {
+                this.dataset.fallback='2';
+                this.src='Eu.jpg?v=4';
+              }
+            "
           >
 
         </div>
@@ -856,7 +1056,9 @@
         </h2>
 
 
-        <!-- ARQUITETURA -->
+        <!-- ===============================================
+             ARQUITETURA
+        ================================================ -->
 
         <div class="area-title">
           arquitetura
@@ -866,9 +1068,10 @@
         <div class="experience-list">
 
 
-          <!-- TERESA -->
+          <!-- TERESA BARRA -->
 
           <article class="experience-item">
+
 
             <div class="experience-date">
               Setembro de 2025<br>
@@ -886,6 +1089,7 @@
                 Estagiária de Arquitetura de Interiores
               </div>
 
+
               <ul class="experience-description">
 
                 <li>
@@ -902,12 +1106,14 @@
                 </li>
 
                 <li>
-                  Gestão de referências e curadoria de conteúdo no Pinterest.
+                  Gestão de referências e curadoria de conteúdo
+                  no Pinterest.
                 </li>
 
               </ul>
 
             </div>
+
 
           </article>
 
@@ -915,6 +1121,7 @@
           <!-- ACMR -->
 
           <article class="experience-item">
+
 
             <div class="experience-date">
               Agosto de 2023<br>
@@ -932,6 +1139,7 @@
                 Estagiária de Acompanhamento de Obras
               </div>
 
+
               <ul class="experience-description">
 
                 <li>
@@ -946,13 +1154,16 @@
 
             </div>
 
+
           </article>
 
 
         </div>
 
 
-        <!-- SOCIAL MEDIA -->
+        <!-- ===============================================
+             SOCIAL MEDIA
+        ================================================ -->
 
         <div class="area-title social">
           social media & comunicação
@@ -965,6 +1176,7 @@
           <!-- DR GABRIEL -->
 
           <article class="experience-item">
+
 
             <div class="experience-date">
               Setembro de 2025<br>
@@ -981,6 +1193,7 @@
               <div class="experience-role">
                 Social Media
               </div>
+
 
               <ul class="experience-description">
 
@@ -1012,12 +1225,14 @@
 
             </div>
 
+
           </article>
 
 
           <!-- ANÁ VELAS -->
 
           <article class="experience-item">
+
 
             <div class="experience-date">
               Novembro de 2024<br>
@@ -1034,6 +1249,7 @@
               <div class="experience-role">
                 Co-fundadora | Marketing e Comercial
               </div>
+
 
               <ul class="experience-description">
 
@@ -1061,12 +1277,14 @@
 
             </div>
 
+
           </article>
 
 
           <!-- PALERMO -->
 
           <article class="experience-item">
+
 
             <div class="experience-date">
               Janeiro de 2025<br>
@@ -1083,6 +1301,7 @@
               <div class="experience-role">
                 Social Media
               </div>
+
 
               <ul class="experience-description">
 
@@ -1110,6 +1329,7 @@
 
             </div>
 
+
           </article>
 
 
@@ -1136,9 +1356,11 @@
 
           <article class="education-item">
 
+
             <div class="education-date">
               2023 — 2028
             </div>
+
 
             <div class="education-info">
 
@@ -1152,14 +1374,17 @@
 
             </div>
 
+
           </article>
 
 
           <article class="education-item">
 
+
             <div class="education-date">
               Conclusão em 2021
             </div>
+
 
             <div class="education-info">
 
@@ -1172,6 +1397,7 @@
               </p>
 
             </div>
+
 
           </article>
 
@@ -1192,7 +1418,10 @@
         <div class="skills-columns">
 
 
+          <!-- FERRAMENTAS -->
+
           <div class="skills-block">
+
 
             <h3>
               _ferramentas & competências
@@ -1204,35 +1433,44 @@
               <span class="skill-level">avançado</span>
             </div>
 
+
             <div class="skill-row">
               <span class="skill-name">SketchUp</span>
               <span class="skill-level">intermediário</span>
             </div>
+
 
             <div class="skill-row">
               <span class="skill-name">Archicad</span>
               <span class="skill-level">iniciante</span>
             </div>
 
+
             <div class="skill-row">
               <span class="skill-name">Canva</span>
               <span class="skill-level">avançado</span>
             </div>
+
 
             <div class="skill-row">
               <span class="skill-name">CapCut</span>
               <span class="skill-level">avançado</span>
             </div>
 
+
             <div class="skill-row">
               <span class="skill-name">Microsoft Office</span>
               <span class="skill-level">avançado</span>
             </div>
 
+
           </div>
 
 
+          <!-- IDIOMAS -->
+
           <div class="skills-block">
+
 
             <h3>
               _idiomas
@@ -1244,15 +1482,18 @@
               <span class="skill-level">nativo</span>
             </div>
 
+
             <div class="skill-row">
               <span class="skill-name">Inglês</span>
               <span class="skill-level">avançado / fluente</span>
             </div>
 
+
             <div class="skill-row">
               <span class="skill-name">Espanhol</span>
               <span class="skill-level">básico</span>
             </div>
+
 
           </div>
 
@@ -1320,14 +1561,18 @@
 
         {
           threshold: 0.10,
-          rootMargin: "0px 0px -25px 0px"
+
+          rootMargin:
+            "0px 0px -25px 0px"
         }
 
       );
 
 
     revealElements.forEach(element => {
+
       revealObserver.observe(element);
+
     });
 
   </script>
